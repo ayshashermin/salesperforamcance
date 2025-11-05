@@ -4,9 +4,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
+    "build": "npx prisma generate",
     "start": "node src/index.js",
-    "prisma:migrate": "prisma migrate dev --name init",
-    "prisma:generate": "prisma generate"
+    "start:prod": "npx prisma migrate deploy && node src/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev --name init"
   },
   "keywords": [],
   "author": "",
